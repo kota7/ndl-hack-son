@@ -5,11 +5,12 @@ from urllib.parse import urljoin
 import os
 
 def shugiin():
-  url = "http://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/syu/1giin.htm"
-  x = urlopen(url).read()
-  soup = BeautifulSoup(x)
-  links = soup.find_all("a")
-  links = filter(lambda l: l.get("href").find("/profile/") > 0, links)
+  links = []
+  for i in range(1, 11):
+    url = "http://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/syu/%dgiin.htm" % i
+    x = urlopen(url).read()
+    soup = BeautifulSoup(x)
+    links += filter(lambda l: l.get("href").find("/profile/") > 0, soup.find_all("a"))
   
   g = open("public_images/figlist.csv", "w")
   for l in links:
@@ -48,5 +49,5 @@ def sangiin():
 
 
 # uncomment to download.
-#shugiin()
+shugiin()
 #sangiin()
