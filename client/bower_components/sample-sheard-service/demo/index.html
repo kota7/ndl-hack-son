@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+<head>
+<title>Demo App</title>
+  <script src="angular/angular.min.js"></script>
+</head>
+<body>
+  <div ng-controller="sampleController">
+    <h3>Tags:{{eventDatas.tag.get()}}</h3>
+    <ul ng-repeat="tag in eventDatas.event.getTags()">
+      <li ng-click="eventDatas.tag.set(tag)">{{tag}}</li>
+    </ul>
+    <button ng-click="eventDatas.tag.clear()">tag clear</button>
+
+    <h3>Events</h3>
+    <ul ng-repeat="event in eventDatas.event.get() | filter: eventDatas.tag.filter()">
+      <li>{{event.name}} : {{event.tag}} </li>
+    </ul>
+  </div>
+  <script src="eventSheard.service.js"></script>
+  <script>
+    var demoApp = angular.module("demoApp", ['app.component.events']);
+
+    demoApp.controller('sampleController', ['$scope', 'app.component.events.sheard.service', function($scope, eventDatas){
+      $scope.eventDatas = eventDatas;
+      eventDatas.event.create([
+        {name:'A', tag:'fizz'},
+        {name:'B', tag:'fizz'},
+        {name:'C', tag:'bazz'},
+      ]);
+    }]);
+  </script>
+</body>
+</html> 

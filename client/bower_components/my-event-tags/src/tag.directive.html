@@ -1,0 +1,10 @@
+<div class="app-directive-sample-container">
+ <span class="app-sample-main">My Tag Directive</span>
+ <ul ng-repeat="tag in getTags()">
+   <li ng-click="setTag(tag)"
+       class="app-sample-base"
+       ng-class="isUseTag(tag) ? 'app-sample-use' : ''"
+   >{{isUseTag(tag) ? '[x]' : '[&nbsp]'}}{{tag}}</li>
+ </ul>
+ <button ng-click="clearTag()">tag clear</button>
+</div>

@@ -1,0 +1,36 @@
+{
+  "name": "my-event-tags",
+  "homepage": "https://github.com/MSakamaki/my-event-tags",
+  "authors": [
+    "m.sakamaki <mail@m-sakamaki.jp>"
+  ],
+  "description": "event tag component",
+  "main": [
+    "bin/index.js",
+    "bin/index.min.css"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "54ecebbb4b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "54ecebbb4b2bfc7a99a641c60ccce0151c9d3285"
+  },
+  "_source": "https://github.com/MSakamaki/my-event-tags.git",
+  "_target": "*",
+  "_originalSource": "my-event-tag",
+  "_direct": true
+}

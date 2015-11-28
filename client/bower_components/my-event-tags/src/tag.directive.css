@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+/**
+ * style name of the style sheet does not overlap, 
+ * adding module name to the beginning
+ */
+.app-directive-sample-container {
+  font-weight: bold;
+}
+
+.app-directive-sample-container .app-sample-main {
+  color: red;
+}
+
+.app-directive-sample-container .app-sample-base {
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.app-directive-sample-container .app-sample-base.app-sample-use {
+  color: green;
+  font-size:2em;
+}

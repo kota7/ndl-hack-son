@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+<head>
+<title>Demo App</title>
+  <link rel="stylesheet" href="tag.directive.css" />
+  <script src="angular/angular.min.js"></script>
+  <script src="sample-sheard-service/bin/index.js"></script>
+</head>
+<body>
+  <div ng-controller="demoCtrl">
+    <event-tags></event-tags>
+    <ul ng-repeat="event in eventDatas.event.get() | filter: eventDatas.tag.filter()">
+      <li>{{event.name}} : {{event.tag}} </li>
+    </ul>
+  </div>
+  
+  <script src="tag.directive.js"></script>
+  <script>
+    var demoApp = angular.module("demoApp", ['app.component.events.directive']);
+    demoApp.controller('demoCtrl',[
+      '$scope',
+      'app.component.events.sheard.service',
+      function($scope, eventDatas){
+        $scope.eventDatas = eventDatas;
+        eventDatas.event.create([
+          {name:'A', tag:'fizz'},
+          {name:'B', tag:'fizz'},
+          {name:'C', tag:'bazz'},
+        ]);
+      }]);
+  </script>
+</body>
+</html> 

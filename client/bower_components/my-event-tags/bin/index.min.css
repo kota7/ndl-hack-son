@@ -1,0 +1,1 @@
+@charset "utf-8";.app-directive-sample-container{font-weight:700}.app-directive-sample-container .app-sample-main{color:red}.app-directive-sample-container .app-sample-base{transition:all cubic-bezier(.25,.46,.45,.94) .5s}.app-directive-sample-container .app-sample-base.app-sample-use{color:green;font-size:2em}

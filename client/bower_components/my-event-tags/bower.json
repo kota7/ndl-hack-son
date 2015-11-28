@@ -1,0 +1,27 @@
+{
+  "name": "my-event-tags",
+  "version": "0.0.1",
+  "homepage": "https://github.com/MSakamaki/my-event-tags",
+  "authors": [
+    "m.sakamaki <mail@m-sakamaki.jp>"
+  ],
+  "description": "event tag component",
+  "main": [
+    "bin/index.js",
+    "bin/index.min.css"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
