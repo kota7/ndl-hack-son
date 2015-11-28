@@ -2,10 +2,16 @@
 
 angular.module('exampleApp')
   .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+    $scope.events = [];
+    $scope.selects = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+    //議員選択
+    $scope.select = function select(id) {
+      console.log(id);
+    }
+
+    $http.get('/api/events').success(function(event) {
+      $scope.events = event.data;
     });
 
   });
